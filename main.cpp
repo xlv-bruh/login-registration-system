@@ -82,7 +82,7 @@ int main()
 			}
 			if (login_email && login_password)
 			{
-				cout << "Welcome " + username << endl;
+				cout << "Welcome "<<username << endl;
 				login = true;
 			}
 			else
