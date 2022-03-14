@@ -52,9 +52,9 @@ int main()
 
 				out.close();
 			}
-			else if (email_temp)
+			else if (!email_temp)
 				cout << "incorect email" << endl;
-			else
+			else if (password != password1)
 				cout << "passwords dont match"<<endl;
 		}
 		else if (temp == '-')
