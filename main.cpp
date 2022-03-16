@@ -25,6 +25,8 @@ int main()
 		cout << "Enter '+' if u want to sing in, or enter '-', if u already have an acc: ";		cin >> temp;
 		if (temp == '+')
 		{
+			cout << endl << "Registrtion:" << endl << endl;
+
 			cout << "Enter email: ";		cin >> email;
 
 			for(int i = 0; i < email.size(); i++)
@@ -52,9 +54,9 @@ int main()
 
 				out.close();
 			}
-			else if (!email_temp)
+			else if (email_temp)
 				cout << "incorect email" << endl;
-			else if (password != password1)
+			else
 				cout << "passwords dont match"<<endl;
 		}
 		else if (temp == '-')
@@ -67,11 +69,17 @@ int main()
 			bool login_email = false;
 			bool login_password = false;
 			out.open("login.txt");
-			while(!out.eof()){
+
+			for(int i = 0; !out.eof(); i++){
 				out >> File;
 				if(File == email)
 				{
 					login_email = true;
+				}
+
+				if(i == 1)
+				{
+					username = File;
 				}
 
 				if(File == password)
@@ -82,7 +90,7 @@ int main()
 			}
 			if (login_email && login_password)
 			{
-				cout << "Welcome "<<username << endl;
+				cout << "Welcome " << username << "!" << endl;
 				login = true;
 			}
 			else
